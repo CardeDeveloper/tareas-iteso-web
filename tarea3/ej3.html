@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        table th {
+            font-size: 2em;
+            padding:12px;
+            text-align: left;
+            background-color: skyblue;
+            color: white;
+        }
+
+        table td {
+            text-align: left;
+            
+        }
+        
+
+        table tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        td {
+            padding: 15px;
+            width: 200px;
+        }
+
+        input[type="checkbox"] + label {
+            font-size: 2em;
+        }
+
+        input[type="radio"]{
+            position: relative;
+            left: 20px;
+        }
+
+        input[type="radio"]  + label {
+            position: relative;
+            left: 20px;
+        }   
+
+        #r1:checked ~ #r2:checked ~ table tr[data-info^="M"] {
+            opacity: 0.5; 
+        }
+
+        #r1:checked ~ #r3:checked ~ table tr[data-info^="H"]{
+            opacity: 0.5; 
+        }
+
+        #r4:checked ~ #r5:checked ~ table tr[data-info$="R"] {
+            opacity: 0.5; 
+        }
+
+        #r4:checked ~ #r6:checked ~ table tr[data-info$="A"]{
+            opacity: 0.5; 
+        }
+
+        #r1:checked ~ #r2:checked + label::after{
+            content: "";
+        }
+
+        #r1:checked ~ #r3:checked + label::after {
+            content: ""
+        }
+
+        #r4:checked ~ #r5:checked  + label::after {
+            content: ""
+        }
+
+        #r4:checked ~ #r6:checked + label::after {
+            content: ""
+        }
+
+        #ch1:checked ~ table td:nth-of-type(n+2):nth-of-type(-n+4),
+        #ch1:checked ~ table th:nth-of-type(n+2):nth-of-type(-n+4) {
+                display: none;
+        }
+
+        #ch1:checked ~ table td {
+            width: 600px;
+        }
+
+        #ch1:checked ~ table tr {
+            width: 600px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1> Filtros de alumnos </h1>
+
+    <input class="sx" type="checkbox" name="sx" id="r1">  
+    <label class="sx"  for="r1"> Por sexo </label> <br>
+    <input class="sx" type="radio" name="sx" id="r2"> 
+    <label class="sx"  for="r2"> Hombres </label> <br>
+    <input class="sx" type="radio" name="sx" id="r3" checked> 
+    <label class="sx"  for="r3"> Mujeres </label> <br>
+    <input class="aprobacion" type="checkbox" name="ap" id="r4"> 
+    <label class="aprobacion"  for="r4"> Calificación </label> <br>
+    <input class="aprobacion" type="radio" name="ap" id="r5" checked> 
+    <label class="aprobacion"  for="r5"> Aprobados </label> <br>
+    <input class="aprobacion" type="radio" name="ap" id="r6"> 
+    <label class="aprobacion"  for="r6"> Reprobados </label> <br>
+    <input class="columnas" type="checkbox" name="col" id="ch1"> 
+    <label class="columnas"  for="ch1"> Mostrar solo nombre y calificación </label> <br>
+    <hr>
+
+    <table>
+        <tr >
+            
+            <th>Nombre</th>
+            <th>correo</th>
+            <th>ciudad</th>
+            <th>créditos</th>
+            <th>promedio</th>
+        </tr>
+        <tr data-info="H R" >
+            <td>Marcos Trab</td>
+            <td>sujma@ku.rs</td>
+            <td>Guadalajara</td>
+            <td>165</td>
+            <td>5.5</td>
+           
+       </tr>
+        <tr data-info="M R" >
+            <td>Eula Perry</td>
+            <td>lekud@ni.mn</td>
+            <td>Zapopan</td>
+            <td>375</td>
+            <td>5.8</td>
+            
+        </tr>
+        <tr data-info="H A">
+            <td>Antonio Clayton</td>
+            <td>diw@vuge.pa</td>
+            <td>Zapopan</td>
+            <td>197</td>
+            <td>8.9</td>
+           
+        </tr>
+        <tr data-info="M A">
+            <td>Mary Alexander</td>
+            <td>ka@piukalon.ga</td>
+            <td>Guadalajara</td>
+            <td>210</td>
+            <td>7.7</td>
+        </tr>
+        <tr data-info="M A">
+                <td>Mar Wewar</td>
+                <td>ba@kalon.ga</td>
+                <td>Zapopan</td>
+                <td>310</td>
+                <td>9.7</td>
+        </tr>
+    </table>
+</body>
+</html>

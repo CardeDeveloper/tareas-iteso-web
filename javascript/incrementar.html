@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p id="number"></p>
+    <button onclick="render(1)">incrementar</button>
+    <button onclick="render(-1)">decrementar</button>
+
+    <script>
+        let counter=0
+        render(counter)
+        function render(n){
+            counter+=n
+            document.getElementById("number").innerText= counter
+        }
+        
+    </script>
+</body>
+</html>

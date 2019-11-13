@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function libro(title,year,editorial){
+            this.title=title
+            this.year = year
+            this.editorial = editorial
+        }
+
+        let l = new libro("principito", 1990, "no se")
+        console.log(l)
+
+        for(let key in l) {
+            console.log(`${key}:${l[key]}`);
+        }
+
+        
+
+        function check(obj, prop){
+            if(prop in obj){
+                console.log(obj[prop])
+                return true
+            }
+                
+            return false
+        }
+
+        console.log(check(l,"title"))
+
+        function clone(target,src){
+            for(let key in src){
+                if(typeof src[key] == 'Object'){
+                    target[key] = {}
+                    clone(target[key], src[key])
+                }else{
+                    target[key] = src[keyg]
+                }
+            }
+        }
+
+
+
+    
+    </script>
+</body>
+</html>

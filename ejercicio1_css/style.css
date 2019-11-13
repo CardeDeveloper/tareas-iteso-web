@@ -1,0 +1,28 @@
+#main{
+    color:dodgerblue;
+    text-shadow: 0px 0px 19px #1C6EA4;
+    text-align: center;
+}
+.subtitulo{
+    background: skyblue;
+    font-weight: normal;
+}
+
+.ejemplo{
+    border-style: dashed;
+    border-color: #1C6EA4;
+    background-color: aliceblue;
+}
+
+.tag{
+    color:blue;
+}
+
+.prop{
+    color:green;
+    font-style: italic;
+}
+
+.val{
+    color:red;
+}

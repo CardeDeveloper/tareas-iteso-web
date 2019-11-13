@@ -1,0 +1,25 @@
+table{
+    border-collapse: collapse;
+    border: 1px solid rgb(32, 90, 178);
+    border-top-width: 3px;
+    color: white;
+}
+
+td{
+    width: 50%;
+    border: 0.5px solid rgb(32, 90, 178);
+}
+
+tr:nth-child(even){
+    background: lightskyblue;
+}
+
+tr:first-child{
+    color: blue;
+}
+
+a{
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+}
+

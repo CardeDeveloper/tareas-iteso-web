@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio1 </title>
+    <style>
+        *{
+            color: white;
+        }
+        input[type="radio"]{
+            display: none;
+
+        }
+
+        ul{
+            list-style: none;
+            text-align: left;
+            background: salmon;
+            display: none;
+            margin: 0;
+            font-size: 1.2em;
+        }
+        input[type="radio"]:checked + ul{
+            display: block;
+        }
+        label{
+            font-size: 2em;
+            width: 100%;
+            background: skyblue;
+            text-shadow: 0px 2px 5px black;
+        }
+        section{
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section>
+        
+        <label for="HTML">HTML</label>
+        <input type="radio" name="option" id="HTML" checked>
+        <ul>
+            <li>Texto</li>
+            <li>Listas</li>
+            <li>Tablas</li>
+            <li>Formularios</li>
+            <li>Enlaces</li>
+        </ul>
+        <label for="css">CSS</label>
+        <input type="radio" name="option" id="css">
+        <ul>
+            <li>Selectores</li>
+            <li>Modelo de caja</li>
+            <li>Layout</li>
+        </ul> 
+        
+        <label for="bootstrap">Bootstrap</label>
+        <input type="radio" name="option" id="bootstrap">
+        <ul class = "box3">
+            <li>Components</li>
+            <li>Grid system</li>
+        </ul>
+    </section>
+    
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+.big-box{
+    width: 600px;
+    height: 300px;
+    background: black;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.container1{
+    align-items: center;
+    justify-content: space-around;
+}
+.container2{
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box{
+    font-size: 2em;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+
+.red-box{
+    background: red;
+}
+
+.blue-box{
+    background: blue;
+}
+
+.yellow-box{
+    background: yellow;
+}
+
+.green-box{
+    background: green;
+}
+
+.skyblue-box{
+    background: skyblue;
+}

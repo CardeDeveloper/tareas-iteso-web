@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event listener</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="btn">Click</button>
+
+    <script>
+        let txt= document.getElementById("txt")
+        let btn= document.getElementById("btn")
+
+        btn.onclick= (e) => console.log(e)
+
+        txt.addEventListener("keyup", (e)=>{
+            if(e.keyCode!= 13) return
+            btn.click()
+        })
+    </script>
+</body>
+</html>

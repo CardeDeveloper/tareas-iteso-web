@@ -1,0 +1,106 @@
+/*Regla 1: A todos los enlaces (todos están al final de la página) añadir borde y background
+negro y texto blanco.*/
+a{
+    background:black;
+    color: white;
+    border: 1px solid black;
+}
+
+/* Regla 2: Todos los encabezados que tengan sombra negra. */
+h1,h2,h3,h4,h5,h6{
+    text-shadow: 0px 2px 5px black;
+}
+
+/*Regla 3: Al primer y penúltimo h2 (“Syntax” y “Browser Compatibility Filters & Hacks”)
+cambiar el tamaño de letra por “3em”*/
+body>h2:first-of-type , h2:nth-last-of-type(2){
+    font-size: 3em;
+}
+
+
+/*Regla 4: A las celdas pares de las tablas impares cambiar el BC por lightgreen*/
+table:nth-of-type(odd) td:nth-of-type(2n){
+    background-color: lightgreen;
+}
+/*Regla 5: A los renglones impares de las tablas pares cambiar el BC por lightcoral*/
+table:nth-of-type(2n) tr:nth-of-type(2n+1){
+    background-color: lightcoral;
+}
+/*Regla 6: Que funcionen los radio buttons al seleccionarlos que suceda lo que dicen. Usar
+display:none para ocultar elementos.*/
+input:nth-of-type(2):checked ~ table:nth-of-type(even){
+    display: none;
+}
+
+input:first-of-type:checked ~ table:nth-of-type(odd){
+    display: none;
+}
+/*Regla 7: Seleccionar los primeros h3 hasta el que dice “size” (los siguientes h3 ya no se
+consideran) y añadirle borde, BC lightblue, border-radius:10px, centrado, tamaño de letra
+2em*/
+h3:nth-of-type(-n+12){
+    border-radius:10px;
+    background-color: lightblue;
+    text-align: center;
+    font-size: 2em;
+}
+
+/*Regla 8: Seleccionar los elementos con etiqueta code que están fuera de las tablas
+cambiar a negritas, itálicas, color: lightcoral*/
+p > code, p + ul li code{
+    color:lightcoral;
+    font-style: italic;
+    font-weight: bold
+}
+/*Regla 9: Al poner el mouse en una celda de una tabla par que cambie su bc y el de la
+última celda del siguiente renglón. BC =blue, texto= White*/
+table:nth-of-type(even) td:hover, table:nth-of-type(even) tr:hover+tr td:last-of-type{
+    background-color: blue !important
+}
+
+/*Regla 10: Al poner el mouse en un renglón par de una tabla impar que cambie el color de
+sus celdas por lightseagreen*/
+table:nth-of-type(2n+1) tr:hover:nth-of-type(2n) td{
+    background-color: lightseagreen !important;
+    color: white;
+}
+/*Regla 11: Para la tabla 5 pintar las celdas dela primera y la tercera columna, de la primera
+solo las primeras 6 y de la tercera columna de la 7 en delante. BC= red*/
+table:nth-of-type(5) tr:nth-of-type(-n+7) td:first-child{
+    background-color: red !important;
+}
+table:nth-of-type(5) tr:nth-of-type(n+8) td:nth-child(3){
+    background-color: red !important;
+}
+/*Regla 12: Ocultar las tablas que están después de la tabla de interés la cual se selecciona
+poniendo el mouse en su título.*/
+h3:hover ~ table:nth-child(n+1) ~ table{
+    display: none
+} 
+/*Regla 13: Poner un * al final en los li que no sean ni el primero ni el último de la lista y solo
+si son elementos que están dentro de una tabla.*/
+
+table ul li::after{
+    content: "*";
+}
+
+table ul li:nth-of-type(1)::after{
+    content: initial;
+}
+
+table ul li:last-of-type::after{
+    content: initial;
+}
+/*Regla 14: Selecciona todos los elementos que tengan el atributo class y ponlos con
+fuente itálica y subrayados. */
+*[class]{
+    text-decoration-line: underline;
+}
+
+
+
+/*+++    Conclusion   +++*/
+
+/*Con esta practica reforce principalmente el uso de selectores en css y las reglas vistas
+durante la clase, no necesite googlear nada para saber como usarlo, pero si poner atencion 
+a lo que leia y revisar ejercicios pasados*/

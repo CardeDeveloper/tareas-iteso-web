@@ -1,0 +1,38 @@
+li{
+    width: 100px; 
+    list-style: none;
+    text-align: center;
+    
+
+}
+
+li[uso="poco"]{
+    font-size: xx-small;
+}
+
+li[uso="mucho"]{
+    font-size: xx-large;
+    font-style: italic;
+}
+
+li[enfasis="e-"]{
+    text-decoration-style: wavy;
+    text-decoration-line: underline;
+}
+li[enfasis="e+"]{
+    text-shadow: 0px 2px 5px black;
+}
+
+li[recomendacion]{
+    background: green;
+
+}
+
+li[no-recomendacion]{
+    background-color:orangered;
+    color: white;
+}
+
+li[novedad]{
+    font-weight: bold;
+}

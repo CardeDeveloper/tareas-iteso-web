@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=utf-8>
+    <title>CSS Quick Reference</title>
+    <meta name="date" content="" />
+    <style type="text/css">
+        body {
+            font-family: Verdana, Arial, Helvetica, san-serif;
+            font-size: 80%;
+            line-height: 1.2;
+        }
+
+        table {
+            font-size: 100%;
+        }
+
+        h1 {
+            font-size: 200%;
+            margin-bottom: .5em;
+        }
+
+        h2 {
+            font-size: 150%;
+            margin-bottom: .5em;
+        }
+
+        h3 {
+            font-size: 110%;
+            margin-bottom: .75em;
+        }
+
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            margin-bottom: .5em;
+        }
+
+        p {
+            margin-top: .5em;
+            margin-bottom: .5em;
+        }
+
+        table ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-style: italic;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #333;
+            padding: 4px 5px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        code {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 100%;
+            font-style: normal;
+            color: #006;
+        }
+
+        pre {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 100%;
+            margin: .5em;
+        }
+
+        hr {
+            visibility: hidden;
+        }
+
+        .compact {
+            margin-top: 0;
+        }
+
+        .colProperty {
+            width: 25%;
+        }
+
+        .colDescription {
+            width: 30%;
+        }
+
+        .colValues {
+            width: 25%;
+        }
+
+        .colIE {
+            width: 6%;
+        }
+
+        .colNN {
+            width: 6%;
+        }
+
+        .colW3C {
+            width: 8%;
+        }
+
+        .colUnit {
+            width: 15%;
+        }
+
+        .colMediaType {
+            width: 15%;
+        }
+
+        .boxmodel {
+            width: 300px;
+            margin: 2em 0;
+        }
+
+        .boxmodel div {
+            padding: 3px 24px 24px 24px;
+            margin: 3px;
+            text-align: center;
+        }
+
+        .boxmodel div.margin {
+            border: 1px dashed #000;
+        }
+
+        .boxmodel div.border {
+            border: 1px solid #aaa;
+            background-color: #aaa;
+        }
+
+        .boxmodel div.padding {
+            border: 1px solid #aaa;
+            background-color: #ddd;
+        }
+
+        .boxmodel div.content {
+            border: 1px dashed #000;
+            padding-bottom: 6px;
+        }
+
+        
+        input+div {
+            padding-bottom: 20px;
+        }
+
+        
+        
+
+        /* @media print {
+            body {
+                margin: 0;
+            }
+
+            br.pagebreak {
+                page-break-after: always;
+            }
+        }
+
+        @media screen {
+            body {
+                margin: 24px 48px;
+            }
+
+            br.pagebreak {
+                display: none;
+            }
+        } */
+
+        </style>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <h1>CSS Quick Reference</h1>
+    <h2>Syntax</h2>
+    
+    <input type="radio" name="tab" > Mostrar solo tablas pares <br>
+    <input type="radio" name="tab" > Mostrar solo tablas impares <br>
+    <input type="radio" name="tab" checked> Mostrar todas las tablas
+    <div></div>
+    <h3 class="compact">Style Rules</h3>
+    <table>
+        <tr>
+            <th>Syntax</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>selector { property: value; }</td>
+            <td>basic rule</td>
+        </tr>
+        <tr>
+            <td>selector { property: value; property: value; }</td>
+            <td>multiple styles</td>
+        </tr>
+        <tr>
+            <td>selector1, selector2 { property: value; }</td>
+            <td>applied to multiple selectors</td>
+        </tr>
+        <tr>
+            <td>selector1 selector2 { property: value; }</td>
+            <td>applied to selector2 contained in selector1</td>
+        </tr>
+        <tr>
+            <td>@media mediatype { <br /> &nbsp; &nbsp; selector { property: value; } <br />&nbsp;}<br /></td>
+            <td>applied only for specified mediatype (e.g., print)</td>
+        </tr>
+        <tr>
+            <td>/* comment */ </td>
+            <td>comment</td>
+        </tr>
+    </table>
+    <h3>Selectors</h3>
+    <table>
+        <tr>
+            <th>Syntax</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>element</td>
+            <td>all instances of a specific element (e.g., p)</td>
+        </tr>
+        <tr>
+            <td>element.class</td>
+            <td>all instances of a specific element with a specific class</td>
+        </tr>
+        <tr>
+            <td>.class</td>
+            <td>all instances of any element with a specific class</td>
+        </tr>
+        <tr>
+            <td>#id or element#id</td>
+            <td>an element with a specific id</td>
+        </tr>
+        <tr>
+            <td>element:pseudo-class</td>
+            <td>elements in a special state (e.g., a:link, a:visited, a:hover, a:active)</td>
+        </tr>
+        <tr>
+            <td>element:pseudo-element</td>
+            <td>special "pseudo" elements (e.g., p:first-letter, p:first-line)</td>
+        </tr>
+    </table>
+    <h3>Examples</h3>
+    <table>
+        <tr>
+            <th>Selector</th>
+            <th>CSS Example</th>
+            <th>HTML Example</th>
+        </tr>
+        <tr>
+            <td>element</td>
+            <td><code>p { <span class="value">...</span> }</code></td>
+            <td><code>&lt;p&gt;</code></td>
+        </tr>
+        <tr>
+            <td>element.class</td>
+            <td><code>p.warning { <span class="value">...</span> }</code></td>
+            <td><code>&lt;p class=<span class="value">"warning"</span>&gt;</code></td>
+        </tr>
+        <tr>
+            <td>.class</td>
+            <td><code>.warning { <span class="value">...</span> }</code></td>
+            <td><code>&lt;p class=<span class="value">"warning"</span>&gt;</code></td>
+        </tr>
+        <tr>
+            <td>#id or element#id</td>
+            <td><code>#warning1 { <span class="value">...</span> }</code> or <code>element#warning1 { <span class="value">...</span>
+                    }</code></td>
+            <td><code>&lt;p id=<span class="value">"warning1"</span>&gt;</code></td>
+        </tr>
+        <tr>
+            <td>element:pseudo-class</td>
+            <td><code>a:hover { <span class="value">...</span> }</code></td>
+            <td><code>&lt;a href=<span class="value">"..."</span>&gt;</code></td>
+        </tr>
+    </table>
+    <h3>Applying Styles</h3>
+    <table>
+        <tr>
+            <th>Syntax</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>&lt;tag style=<code class="value">"property: value;"</code>&gt;</code></td>
+            <td>In-line style</td>
+        </tr>
+        <tr>
+            <td><code>&lt;style type=<span class="value">"text/css"</span>&gt;</code><br />
+                <code class="indent1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; selector { <span class="value">property: value;</span>
+                    }</code><br />
+                <code>&lt;/style&gt;</code></td>
+            <td>Embedded style block<br />
+                (in document head)</td>
+        </tr>
+        <tr>
+            <td><code>&lt;link rel=<code class="value">"stylesheet"</code> type=<code class="value">"text/css"</code>
+                    href=<code class="value">"stylesheet.css"</code>&gt;</code></td>
+            <td>External style sheet</td>
+        </tr>
+    </table>
+
+    <!-- br class="pagebreak" / -->
+
+    <h2>Properties</h2>
+    <h3 class="compact">Text</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th>Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>color</code></td>
+            <td>text color</td>
+            <td>
+                <ul>
+                    <li>color</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>font-family</code></td>
+            <td>font family</td>
+            <td>
+                <ul>
+                    <li>family-name <br />
+                        (comma-separated list)</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>font-size</code></td>
+            <td>font size</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                    <li>%</li>
+                    <li><code>xx-small</code></li>
+                    <li><code>x-small</code></li>
+                    <li><code>small</code></li>
+                    <li><code>medium</code></li>
+                    <li><code>large</code></li>
+                    <li><code>x-large</code></li>
+                    <li><code>xx-large</code></li>
+                    <li><code>smaller</code></li>
+                    <li><code>larger</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>font-weight</code></td>
+            <td>font weight</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li><code>bold</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>font-style</code></td>
+            <td>font style</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li><code>italic</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>font-variant</code></td>
+            <td>font variant</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li><code>small-caps</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>text-decoration</code></td>
+            <td>text decoration</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li><code>underline</code></li>
+                    <li><code>overline</code></li>
+                    <li><code>line-through</code></li>
+                    <li><code>blink</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>text-transform</code></td>
+            <td>text case</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li><code>capitalize</code></li>
+                    <li><code>uppercase</code></li>
+                    <li><code>lowercase</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>text-align</code></td>
+            <td>horizontal alignment of text within an element</td>
+            <td>
+                <ul>
+                    <li><code>left</code></li>
+                    <li><code>right</code></li>
+                    <li><code>center</code></li>
+                    <li><code>justify</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>text-indent</code></td>
+            <td>size of first line indent</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>line-height</code></td>
+            <td>line height (affects space between lines)</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li>number</li>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>letter-spacing</code></td>
+            <td>space between characters</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li>length</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>word-spacing</code></td>
+            <td>space between words</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li>length</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>white-space</code></td>
+            <td>how white space inside an element is handled</td>
+            <td>
+                <ul>
+                    <li><code>normal</code></li>
+                    <li><code>pre</code></li>
+                    <li><code>nowrap</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    <h3>Lists</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>list-style-type</code></td>
+            <td>type of bullet or number</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li><code>disc</code></li>
+                    <li><code>circle</code></li>
+                    <li><code>square</code></li>
+                    <li><code>decimal</code></li>
+                    <li><code>lower-roman</code></li>
+                    <li><code>upper-roman</code></li>
+                    <li><code>lower-alpha</code></li>
+                    <li><code>upper-alpha</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>list-style-position</code></td>
+            <td> bullet/number position (when list items wrap)</td>
+            <td>
+                <ul>
+                    <li><code>inside</code></li>
+                    <li><code>outside</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>list-style-image</code></td>
+            <td>image to be used as bullet</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li>url</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>list-style</code></td>
+            <td>shorthand for all list-style settings</td>
+            <td>
+                <ul>
+                    <li>list-style-type</li>
+                    <li>list-style-position</li>
+                    <li>list-style-image</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    <h3>Tables</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>border-collapse</code></td>
+            <td>border model of a table</td>
+            <td>
+                <ul>
+                    <li><code>collapse</code></li>
+                    <li><code>separate</code></li>
+                </ul>
+            </td>
+            <td>CSS2</td>
+        </tr>
+        <tr>
+            <td><code>border-spacing</code></td>
+            <td>cell spacing </td>
+            <td>
+                <ul>
+                    <li>length</li>
+                </ul>
+            </td>
+            <td>CSS2</td>
+        </tr>
+        <tr>
+            <td><code>caption-side</code></td>
+            <td>position of the caption box relative to the table</td>
+            <td>
+                <ul>
+                    <li><code>top</code></li>
+                    <li><code>bottom</code></li>
+                    <li><code>left</code></li>
+                    <li><code>right</code></li>
+                </ul>
+            </td>
+            <td>CSS2</td>
+        </tr>
+        <tr>
+            <td><code>table-layout</code></td>
+            <td>algorithm used for table layout</td>
+            <td>
+                <ul>
+                    <li><code>auto</code></li>
+                    <li><code>fixed</code></li>
+                </ul>
+            </td>
+            <td>CSS2</td>
+        </tr>
+    </table>
+    <h3>Cursor</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>cursor</code></td>
+            <td>appearance of mouse pointer</td>
+            <td>
+                <ul>
+                    <li><code style="cursor:auto;">auto</code></li>
+                    <li><code>crosshair</code></li>
+                    <li><code style="cursor:default;">default</code></li>
+                    <li><code>pointer (hand) </code></li>
+                    <li><code>move</code></li>
+                    <li><code>text</code></li>
+                    <li><code>wait</code></li>
+                    <li><code>help</code></li>
+                    <li><code style="cursor:n-resize;">n-resize</code></li>
+                    <li><code style="cursor:s-resize;">s-resize</code></li>
+                    <li><code style="cursor:e-resize;">e-resize</code></li>
+                    <li><code style="cursor:w-resize;">w-resize</code></li>
+                    <li><code style="cursor:ne-resize;">ne-resize</code></li>
+                    <li><code style="cursor:sw-resize;">sw-resize</code></li>
+                    <li><code style="cursor:nw-resize;">nw-resize</code></li>
+                    <li><code style="cursor:se-resize;">se-resize</code></li>
+                    <li><code>url</code></li>
+                </ul>
+            </td>
+            <td>CSS2</td>
+        </tr>
+    </table>
+
+    <!-- br class="pagebreak" / -->
+
+    <h3>Background</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>background-color</code></td>
+            <td>background color</td>
+            <td>
+                <ul>
+                    <li>color</li>
+                    <li><code>transparent</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>background-image</code></td>
+            <td>background image</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li>url</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>background-repeat</code></td>
+            <td>if/how background image is repeated</td>
+            <td>
+                <ul>
+                    <li><code>no-repeat</code></li>
+                    <li><code>repeat</code></li>
+                    <li><code>repeat-x</code></li>
+                    <li><code>repeat-y</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>background-attachment</code></td>
+            <td>whether background image scrolls with the page</td>
+            <td>
+                <ul>
+                    <li><code>scroll</code></li>
+                    <li><code>fixed</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>background-position</code></td>
+            <td>position of background image</td>
+            <td>
+                <ul>
+                    <li><code>top</code>/<code>center</code>/<code>bottom</code><br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<code>left</code>/<code>center</code>/<code>right</code></li>
+                    <li>x-% y-%</li>
+                    <li>x-pixels y-pixels</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    <h3>Border</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>border-width</code></td>
+            <td>border width</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>border-style</code></td>
+            <td>border style</td>
+            <td>
+                <ul>
+                    <li><code>none</code></li>
+                    <li><code>dashed</code></li>
+                    <li><code>dotted</code></li>
+                    <li><code>double</code></li>
+                    <li><code>groove</code></li>
+                    <li><code>inset</code></li>
+                    <li><code>outset</code></li>
+                    <li><code>solid</code></li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>border-color</code></td>
+            <td>border color</td>
+            <td>
+                <ul>
+                    <li>color</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><code>border-top/right/bottom/left</code></li>
+                </ul>
+            </td>
+            <td>individual settings for top, right, bottom, and left</td>
+            <td>
+                <ul>
+                    <li>border-top-width</li>
+                    <li>border-top-style</li>
+                    <li>border-top-color</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    <h3>Margin &amp; Padding</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>margin</code></td>
+            <td>space between element border and parent/surrounding elements</td>
+            <td>
+                <ul>
+                    <li><code>auto</code></li>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><code>margin-top/right/bottom/left</code></li>
+                </ul>
+            </td>
+            <td>individual settings for top, right, bottom, and left</td>
+            <td>
+                <ul>
+                    <li>margin</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>padding</code></td>
+            <td>space between element and element border</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><code>padding-top/right/bottom/left</code></li>
+                </ul>
+            </td>
+            <td>individual settings for top, right, bottom, and left</td>
+            <td>
+                <ul>
+                    <li>padding</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    <br class="pagebreak" />
+
+    <h3>Size</h3>
+    <table>
+        <tr>
+            <th class="colProperty">Property</th>
+            <th class="colDescription">Description</th>
+            <th class="colValues">Values</th>
+            <th class="colW3C"><abbr title="World Wide Web Consortium">W3C</abbr></th>
+        </tr>
+        <tr>
+            <td><code>height</code> </td>
+            <td>height</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+        <tr>
+            <td><code>width</code></td>
+            <td>width</td>
+            <td>
+                <ul>
+                    <li>length</li>
+                    <li>%</li>
+                </ul>
+            </td>
+            <td>CSS1</td>
+        </tr>
+    </table>
+
+    
+
+    <h2>The Box Model</h2>
+    <p>The CSS Box Model describes how block-level content is rendered (displayed) in a web browser. Each block-level
+        element is displayed within a set of rectangular boxes, starting with a box for the content (text, image, etc)
+        and surrounded by optional boxes for <code>padding</code>, <code>border</code>, and <code>margin</code>; a
+        <code>background</code> can be applied behind the content and padding areas:</p>
+    <div class="boxmodel">
+        <div class="margin"> margin
+            <div class="border"> border
+                <div class="padding"> padding
+                    <div class="content"> content </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3>The Box Model Problem</h3>
+    <p>According to W3C standards, the <code>height</code> or <code>width</code> of an element is equal to the height
+        or width of the content box alone; the width of <code>padding</code>, <code>border</code>, and <code>margin</code>
+        are not included in the <code>height</code> or <code>width</code> value. However, Microsoft Internet Explorer 5
+        includes an element's <code>padding</code> and <code>border</code> when calculating <code>height</code> or
+        <code>width:</code></p>
+    <ul>
+        <li>height/width (W3C) = content</li>
+        <li>height/width (IE 5) = content + padding + border</li>
+    </ul>
+    <p>There are two approaches to addressing this problem:</p>
+    <ul>
+        <li>avoid applying <code>padding</code> or <code>border</code> to elements that have <code>height</code> or
+            <code>width</code> set</li>
+        <li>use a "box model hack" to provide one <code>height</code> or <code>width</code> value for
+            standards-compliant browsers and another to Internet Explorer 5 (see Filters &amp; Hacks at the end of this
+            document) </li>
+    </ul>
+
+    <br class="pagebreak" />
+
+    <h2>Browser Compatibility Filters &amp; Hacks</h2>
+
+    <h3>Style Sheet Filters</h3>
+    <p>The following technique can be used to hide entire style sheets from older browsers:</p>
+    <table summary="Style Sheet Filters">
+        <thead>
+            <tr>
+                <th scope="col">Hide from</th>
+                <th scope="col">Syntax</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">IE 4, Netscape 4, IE 5 Mac (and older)</th>
+                <td>&lt;style type="text/css"&gt;
+                    <br />&nbsp; &nbsp; @import &#39;filename.css&#39;;
+                    <br />&lt;/style&gt;
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Style Rule Filters</h3>
+    <p>The following techniques can be used to present specific style rules only to certain browsers:</p>
+    <table summary="Style Rule Filters">
+        <thead>
+            <tr>
+                <th scope="col">Show to</th>
+                <th scope="col">Syntax</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="asterisk">
+                <th scope="row">IE 5, 6, 7</th>
+                <td>*property: value;</td>
+            </tr>
+            <tr class="underscore">
+                <th scope="row">IE 5, 6</th>
+                <td>_property: value;</td>
+            </tr>
+            <tr class="underscore-alternateboxmodel">
+                <th scope="row">IE 5</th>
+                <td>_property /**/: value;</td>
+            </tr>
+            <tr class="underscore-simplifiedboxmodel">
+                <th scope="row">IE 6</th>
+                <td>_propert\y: value;</td>
+            </tr>
+            <tr class="combination">
+                <th scope="row">IE 7</th>
+                <td>*propert\y /**/: value; (note: the \ may not preceed letters a-f)</td>
+            </tr>
+            <tr class="case">
+                <th scope="row">Safari 3</th>
+                <td>.className[class=&quot;CLASSNAME&quot;] {property: value;}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>References:</h2>
+    <ul class="references" style="font-style:normal;">
+        <li><a href="http://www.w3.org/TR/REC-CSS2/propidx.html">W3C CSS2 Property Index</a>
+            (http://www.w3.org/TR/REC-CSS2/propidx.html)</li>
+        <li><a href="http://www.w3schools.com/css/css_reference.asp">W3Schools CSS2 Reference</a>
+            (http://www.w3schools.com/css/css_reference.asp)</li>
+        <li><a href="http://www.htmlhelp.com/reference/css/properties.html">WDG CSS Properties</a>
+            (http://www.htmlhelp.com/reference/css/properties.html)</li>
+        <li><a href="http://www.devguru.com/Technologies/css/quickref/css_index.html">DevGuru CSS2 Index</a>
+            (http://www.devguru.com/Technologies/css/quickref/css_index.html)</li>
+        <li><a href="http://centricle.com/ref/css/filters/">Centricle CSS Filters</a>
+            (http://centricle.com/ref/css/filters)</li>
+    </ul>
+
+</body>
+
+</html>
